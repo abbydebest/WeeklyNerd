@@ -1,0 +1,87 @@
+/* ///////////////////// */
+/* 🎞️🎞️🎞️ FONTFACES 🎞️🎞️🎞️ */
+/* ///////////////////// */
+
+@font-face {
+    font-family: "PP Mondwest";
+    src: url(../fonts/PPMondwest/PPMondwest-Regular.otf);
+}
+
+@font-face {
+    font-family: "PP Agrandir Regular";
+    src: url(../fonts/PPAgrandir/PPAgrandir-Regular.otf);
+}
+
+/* ////////////////////// */
+/* 🍙🍙🍙 CSS REMEDY 🍙🍙🍙 */
+/* ////////////////////// */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+:root {
+    /* No margin & padding */
+    --no-margin: 0;
+
+    /* Colours */
+    --black: #1f1f1f;
+    --white: #ffffff;
+
+    /* Fonts */
+    --pixel: "PP Mondwest", Arial, Helvetica, sans-serif;
+    --regular: "PP Agrandir Regular", Arial, Helvetica, sans-serif;
+
+    /* Font sizes */
+    --h1: 4rem;
+    --h2: 2.5rem;
+    --h3: 1.5rem;
+    --p: 1rem;
+}
+
+/* /////////////////////////// */
+/* 🪐🪐🪐 TEXT FORMATTING 🪐🪐🪐 */
+/* /////////////////////////// */
+
+body {
+    font-family: var(--regular);
+    color: var(--black);
+    background-color: var(--white);
+}
+
+h1 {
+    font-family: var(--pixel);
+    color: var(--black);
+    size: var(--h1);
+}
+
+a {
+    color: var(--black);
+    text-decoration: none;
+}
+
+/* //////////////////////////// */
+/* 🛒🛒🛒 WHAT'S IN MY BAG 🛒🛒🛒 */
+/* //////////////////////////// */
+
+img.bag {
+    width: 25vw;
+    position: absolute;
+}
+
+img.miniBag {
+    width: 7vw;
+    position: relative;
+    z-index: 99;
+}
+
+img.bagCharm {
+    width: 2vw;
+    position: relative;
+    z-index: 100;
+}
+
+
