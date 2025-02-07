@@ -97,18 +97,29 @@ section:nth-of-type(1) {
     align-items: center;
 }
 
+section:nth-of-type(1) div {
+    justify-items: center;
+}
+
 section:nth-of-type(1) div ul {
     width: 25vw;
     height: auto;
+    text-align: center;
 }
 
-.retro {
+section:nth-of-type(1) div ul li {
     width: fit-content;
+    height: auto;
 }
 
-.retro img {
+section:nth-of-type(1) div ul li img {
     width: 35%;
 }
+
+/* .retro {
+    width: 35;
+    text-align: center;
+} */
 
 article.bagContainer {
     width: fit-content;
@@ -116,7 +127,7 @@ article.bagContainer {
     position: relative;
 }
 
-article.bagContainer:hover {
+div.draaien:hover {
     animation: tilt-n-move-shaking 0.3s ease-in-out 4;
 }
 
