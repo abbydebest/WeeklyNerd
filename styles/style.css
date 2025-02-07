@@ -12,6 +12,11 @@
     src: url(../fonts/PPAgrandir/PPAgrandir-Regular.otf);
 }
 
+@font-face {
+    font-family: "Phosphene";
+    src: url(../fonts/PhospheneFont-Regular.ttf);
+}
+
 /* ////////////////////// */
 /* 🍙🍙🍙 CSS REMEDY 🍙🍙🍙 */
 /* ////////////////////// */
@@ -34,6 +39,7 @@
     /* Fonts */
     --pixel: "PP Mondwest", Arial, Helvetica, sans-serif;
     --regular: "PP Agrandir Regular", Arial, Helvetica, sans-serif;
+    --display: "Phosphene", Arial, Helvetica, sans-serif;
 
     /* Font sizes */
     --h1: 4rem;
@@ -53,9 +59,10 @@ body {
 }
 
 h1 {
-    font-family: var(--pixel);
+    font-family: var(--display);
     color: var(--black);
-    size: var(--h1);
+    font-size: var(--h1);
+    text-align: center;
 }
 
 a {
@@ -63,25 +70,91 @@ a {
     text-decoration: none;
 }
 
+/* ////////////////////// */
+/* 💥💥💥 ANIMATIONS 💥💥💥 */
+/* ////////////////////// */
+
+/* SOURCE: https://unused-css.com/blog/css-shake-animation/ */
+@keyframes tilt-n-move-shaking {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(5px, 5px) rotate(5deg); }
+    50% { transform: translate(0, 0) rotate(0deg); }
+    75% { transform: translate(-5px, 5px) rotate(-5deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
 /* //////////////////////////// */
 /* 🛒🛒🛒 WHAT'S IN MY BAG 🛒🛒🛒 */
 /* //////////////////////////// */
 
+/* Deze laten shaken */
+section:nth-of-type(1) {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100vw;
+    height: 100vh;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+section:nth-of-type(1) div ul {
+    width: 25vw;
+    height: auto;
+}
+
+.retro {
+    width: fit-content;
+}
+
+.retro img {
+    width: 35%;
+}
+
+article.bagContainer {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+}
+
+article.bagContainer:hover {
+    animation: tilt-n-move-shaking 0.3s ease-in-out 4;
+}
+
+.charm1 {
+    position: absolute;
+    top: 32%;
+    left: 23%;
+    rotate: 40deg;
+    z-index: 2;
+}
+
+.charm1 img {
+    transform-origin: 60% 2%;
+    rotate: calc(var(--angle) * -1deg);
+}
+
+.charm2 {
+    position: absolute;
+    top: 39%;
+    left: 30%;
+    rotate: -15deg;
+    z-index: 1;
+}
+
 img.bag {
     width: 25vw;
-    position: absolute;
+    height: auto;
 }
 
 img.miniBag {
     width: 7vw;
-    position: relative;
-    z-index: 99;
+    position: absolute;
+    left: 20%;
 }
 
 img.bagCharm {
-    width: 2vw;
-    position: relative;
-    z-index: 100;
+    width: 5vw;
+    position: absolute;
 }
 
 
