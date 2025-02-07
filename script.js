@@ -1,8 +1,9 @@
 let bag = document.querySelector(".bagContainer");
 let minibag = document.querySelector(".charm1 img");
+let charm = document.querySelector(".charm2 img");
 
 
-
+// SOURCE: https://pixelscommander.com/javascript/rotate-html-elements-with-mouse/
     new Propeller(bag, {
         inertia: 0.2,
         onDragStop: function() {
@@ -22,9 +23,9 @@ let minibag = document.querySelector(".charm1 img");
             console.log(this.angle);
 
             minibag.style.setProperty("--angle", this.angle);
-
+            charm.style.setProperty("--angle", this.angle);
         }
-    });
+});
 
     // function showLibraryInfo() {
     //     if (window.libInfoShown !== true) {
