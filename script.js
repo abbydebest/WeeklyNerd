@@ -1,6 +1,8 @@
 let bag = document.querySelector(".bagContainer");
 let minibag = document.querySelector(".charm1 img");
 let charm = document.querySelector(".charm2 img");
+let stuff = document.querySelector(".stuff");
+let show = document.querySelector(".show");
 
 
 // SOURCE: https://pixelscommander.com/javascript/rotate-html-elements-with-mouse/
@@ -11,9 +13,10 @@ let charm = document.querySelector(".charm2 img");
             console.log(this.angle)
 
             if (
-                this.angle < 160 && 100 < this.angle
+                this.angle < 250 && 100 < this.angle
             ) {
                 console.log("storten maar die spulletjes")
+                stuff.classList.remove("show");
             }
         },
         onDragStart: function () {
