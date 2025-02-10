@@ -17,6 +17,8 @@ let show = document.querySelector(".show");
             ) {
                 console.log("storten maar die spulletjes")
                 stuff.classList.remove("show");
+            } else {
+                stuff.classList.add("show");
             }
         },
         onDragStart: function () {
