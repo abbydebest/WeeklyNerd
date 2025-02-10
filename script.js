@@ -1,6 +1,7 @@
 let bag = document.querySelector(".bagContainer");
 let minibag = document.querySelector(".charm1 img");
 let charm = document.querySelector(".charm2 img");
+let airpodCase = document.querySelector(".extraSmall img");
 let stuff = document.querySelector(".stuff");
 let show = document.querySelector(".show");
 
@@ -29,6 +30,7 @@ let show = document.querySelector(".show");
 
             minibag.style.setProperty("--angle", this.angle);
             charm.style.setProperty("--angle", this.angle);
+            airpodCase.style.setProperty("--angle", this.angle);
         }
 });
 
