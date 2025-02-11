@@ -1,9 +1,11 @@
 let bag = document.querySelector(".bagContainer");
 let minibag = document.querySelector(".charm1 img");
 let charm = document.querySelector(".charm2 img");
-let airpodCase = document.querySelector(".extraSmall img");
+let stuffMiniBag = document.querySelector(".stuffMiniBag");
+
 let stuff = document.querySelector(".stuff");
-let show = document.querySelector(".show");
+let hidden = document.querySelector(".hidden");
+let shadow = document.querySelector(".shadow");
 
 
 // SOURCE: https://pixelscommander.com/javascript/rotate-html-elements-with-mouse/
@@ -13,13 +15,15 @@ let show = document.querySelector(".show");
             console.log('stop');
             console.log(this.angle)
 
-            if (
-                this.angle < 250 && 100 < this.angle
-            ) {
-                console.log("storten maar die spulletjes")
-                stuff.classList.remove("show");
+            if (this.angle < 250 && 100 < this.angle) {
+                console.log("storten maar die spulletjes");
+                stuff.classList.remove("hidden");
+                stuffMiniBag.classList.remove("hidden");
+                shadow.classList.remove("hidden");
             } else {
-                stuff.classList.add("show");
+                // stuff.classList.add("hidden");
+                // stuffMiniBag.classList.add("hidden");
+                // shadow.classList.add("hidden");
             }
         },
         onDragStart: function () {
@@ -28,9 +32,16 @@ let show = document.querySelector(".show");
         onRotate: function () {
             console.log(this.angle);
 
+            // if (this.angle < 250 && 100 < this.angle) {
+            //     console.log("dontShowStuff");
+            //     stuff.classList.add("hidden");
+            //     stuffMiniBag.classList.add("hidden");
+            //     shadow.classList.add("hidden");
+            // }
+                
             minibag.style.setProperty("--angle", this.angle);
             charm.style.setProperty("--angle", this.angle);
-            airpodCase.style.setProperty("--angle", this.angle);
+            stuffMiniBag.style.setProperty("--angle", this.angle);
         }
 });
 
