@@ -12,18 +12,16 @@ let stuff = document.querySelector(".stuff");
 let hidden = document.querySelector(".hidden");
 let shadow = document.querySelector(".shadow");
 
-console.log("myURL");
+console.log(myURL);
 
-// getData(myURL)
-//     .then(response => response.json())
-// console.log(myURL);
-async function getData(url) {
-    const response = await fetch(url);
-    if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    return response;
-}
+
+// async function getData(url) {
+//     const response = await fetch(url);
+//     if (!response.ok) {
+//         throw new Error(`HTTP error! Status: ${response.status}`);
+//     }
+//     return response;
+// }
 
 fetch(myURL)
     .then(response => response.json())
@@ -44,6 +42,7 @@ fetch(myURL)
         logo.textContent = gitHubHandle;
         
         // 🎀🎀🎀 To change the img to my github avatar avatar 🎀🎀🎀
+        // 🫶🏼 HELP VASILIS
 
         // Get the HTML element in which I want to put my image
         let myImg = document.createElement("img");
@@ -57,12 +56,14 @@ fetch(myURL)
         // Add the myImg/created img to the logo element = <a> element with .githubLink class
         logo.appendChild(myImg);
 
-        // Check of this works
-        console.log(myAvatar);
+        // Check if this works
         console.log(myImg);
 
         // Change the source/content of the img/.avatar class to data/img of myAvatar
         myImg.src = myAvatar;
+
+        // Check if this works
+        console.log(myAvatar);
 
     })
     .catch(error => console.error('Fout bij ophalen', error));
@@ -77,7 +78,7 @@ fetch(myURL)
             if (this.angle < 250 && 100 < this.angle) {
                 console.log("storten maar die spulletjes");
                 stuff.classList.remove("hidden");
-                stuffMiniBag.classList.remove("hidden");
+                // stuffMiniBag.classList.remove("hidden");
                 shadow.classList.remove("hidden");
             } else {
                 // stuff.classList.add("hidden");
@@ -100,7 +101,7 @@ fetch(myURL)
                 
             minibag.style.setProperty("--angle", this.angle);
             charm.style.setProperty("--angle", this.angle);
-            stuffMiniBag.style.setProperty("--angle", this.angle);
+            // stuffMiniBag.style.setProperty("--angle", this.angle);
         }
 });
 
