@@ -3,8 +3,8 @@
 /* ///////////////////// */
 
 @font-face {
-    font-family: "PP Mondwest";
-    src: url(../fonts/PPMondwest/PPMondwest-Regular.otf);
+    font-family: "Clay";
+    src: url(../fonts/CLAY.otf);
 }
 
 @font-face {
@@ -35,27 +35,35 @@
     /* Colours */
     --black: #1f1f1f;
     --white: #ffffff;
+    --creme: seashell;
 
     /* Fonts */
-    --pixel: "PP Mondwest", Arial, Helvetica, sans-serif;
+    --clay: "Clay", Arial, Helvetica, sans-serif;
+    --pixel: "Phosphene", Arial, Helvetica, sans-serif;
     --regular: "PP Agrandir Regular", Arial, Helvetica, sans-serif;
-    --display: "Phosphene", Arial, Helvetica, sans-serif;
 
     /* Font sizes mobile/small */
-    --h1-small: 2.5rem;
-    --h2-small: 1.8rem;
-    --h3-small: 1.2rem;
+    --h1-small: 5rem;
+    --h2-small: 2.5rem;
+    --h3-small: 1rem;
     --p-small: 0.8rem;
 
     /* Font sizes normal/desktop*/
-    --h1: 4rem;
-    --h2: 2.5rem;
+    --h1: 8rem;
+    --h2: 4rem;
     --h3: 1.5rem;
     --p: 1rem;
 
     --width-small: 25%;
     --width-medium: 30%;
     --width-large: 75%;
+
+    /* Title outline */
+    --outline: 0.8rem;
+    --outline-small: 0.5rem;
+
+    /* Bag width */
+    --bag-width: 20vw;
 }
 
 /* /////////////////////////// */
@@ -66,18 +74,57 @@ body {
     font-family: var(--regular);
     color: var(--black);
     background-color: var(--white);
+
+    background-color: var(--creme);
 }
 
 h1 {
-    font-family: var(--display);
+    font-family: var(--clay);
     color: var(--black);
     font-size: var(--h1);
+    text-align: center;
+}
+
+h2 {
+    font-family: var(--pixel);
+    color: var(--black);
+    font-size: var(--h2);
     text-align: center;
 }
 
 p {
     font-size: var(--p);
     text-align: center;
+}
+
+.titleContainer {
+    /* 'New' way of positioning with grid(from Sanne) */
+    display: grid;
+    grid-area: 1 / 1;
+    width: fit-content;
+    justify-items: center;
+    align-items: start;
+    transform: translateY(-45%);
+}
+
+/* Used 'new' CSS selector */
+.titleContainer * {
+    grid-area: 1 / 1;
+    width: fit-content;
+    position: relative;
+}
+
+.titleContainer h2 {
+    z-index: 3;
+}
+
+.outline {
+    font-family: var(--pixel);
+    font-size: var(--h2);
+    -webkit-text-stroke: var(--outline) var(--creme);
+
+    /* position: relative; */
+    z-index: 1;
 }
 
 a {
@@ -87,6 +134,9 @@ a {
 
 /* 🪐 TEXT FORMATTING RESPONSIVE 🪐 */
 
+/* SOURCE: https://www.browserstack.com/guide/responsive-design-breakpoints */
+/* SOURCE: https://www.emailonacid.com/blog/article/email-development/emailology_media_queries_demystified_min-width_and_max-width/ */
+
 /* (extra)small mobile 320px - 600px */
 @media screen and (max-width: 600px) {
 
@@ -94,13 +144,47 @@ a {
         font-size: var(--h1-small);
     }
 
+    h2 {
+        font-size: var(--h2-small);
+    }
+
     p {
         font-size: var(--p-small);
     }
 
+    .outline {
+        font-size: var(--h2-small);
+        -webkit-text-stroke: var(--outline-small) whitesmoke;
+    
+        /* position: relative; */
+        z-index: 1;
+    }
+
 }
-/* SOURCE: https://www.browserstack.com/guide/responsive-design-breakpoints */
-/* SOURCE: https://www.emailonacid.com/blog/article/email-development/emailology_media_queries_demystified_min-width_and_max-width/ */
+
+@media screen and (max-width: 769px) {
+
+    h1 {
+        font-size: var(--h1-small);
+    }
+
+    h2 {
+        font-size: var(--h2-small);
+    }
+
+    p {
+        font-size: var(--p-small);
+    }
+
+    .outline {
+        font-size: var(--h2-small);
+        -webkit-text-stroke: var(--outline-small) whitesmoke;
+    
+        /* position: relative; */
+        z-index: 1;
+    }
+
+}
 
 /* ////////////////////// */
 /* 💥💥💥 ANIMATIONS 💥💥💥 */
@@ -126,7 +210,7 @@ section:nth-of-type(1) {
     height: 100vh;
     justify-content: space-evenly;
     align-items: center;
-    /* padding: 5em 5em 5em 5em; */
+    padding: 2em 2em 2em 2em;
 }
 
 .shake {
@@ -148,7 +232,7 @@ section:nth-of-type(1) {
 
 /* Stuff achter/in tas krijgen */
 .stuff {
-    width: 25vw;
+    width: var(--bag-width);
     height: fit-content;
     /* text-align: center; */
     position: absolute;
@@ -166,7 +250,6 @@ section:nth-of-type(1) {
 
 /* Width on li instead of on img, prevents individual sizing for each img */
 .stuff li {
-
     grid-area:1/1;
     /* width: 20vw; */
     /* height: 45vh; */
@@ -178,6 +261,7 @@ section:nth-of-type(1) {
     width:fit-content;
     justify-items: center;
     align-items: start;
+    rotate: 180deg;
    
 
     /* align-items: center; */
@@ -264,7 +348,7 @@ section:nth-of-type(1) {
 
 @keyframes shadowScale {
     0% {
-        transform: translateY( calc(-50% ) );
+        transform: translateY( calc(-50%) );
         animation-timing-function: ease-in; 
     }
     50% {
@@ -375,7 +459,7 @@ section:nth-of-type(1) {
 }
 
 img.bag {
-    width: 20vw;
+    width: var(--bag-width);
     height: auto;
     position: relative;
     z-index: 1;
