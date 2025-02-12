@@ -85,6 +85,8 @@ body {
     background-color: var(--white);
 
     background-color: var(--creme);
+    overflow: hidden;
+    height: 100vh;
 }
 
 h1 {
@@ -105,6 +107,70 @@ p {
     font-size: var(--p);
     text-align: center;
 }
+
+a {
+    color: var(--black);
+    text-decoration: none;
+}
+
+/* 🪐 TEXT FORMATTING RESPONSIVE 🪐 */
+
+/* SOURCE: https://www.browserstack.com/guide/responsive-design-breakpoints */
+/* SOURCE: https://www.emailonacid.com/blog/article/email-development/emailology_media_queries_demystified_min-width_and_max-width/ */
+
+/* (extra)small mobile 320px - 600px */
+@media screen and (max-width: 769px) {
+
+    h1 {
+        font-size: var(--h1-small);
+    }
+
+    h2 {
+        font-size: var(--h2-small);
+    }
+
+    p {
+        font-size: var(--p-small);
+    }
+
+    .titleContainer {
+        transform: translateY(-45%);
+    }
+
+}
+
+/* @media screen and (max-width: 769px) {
+
+    h1 {
+        font-size: var(--h1-small);
+    }
+
+    h2 {
+        font-size: var(--h2-small);
+    }
+
+    p {
+        font-size: var(--p-small);
+    }
+
+    .outline {
+        font-size: var(--h2-small);
+        -webkit-text-stroke: var(--outline-small) var(--creme);
+    }
+
+} */
+
+/* ////////////////// */
+/* 🔎🔎🔎 HEADER 🔎🔎🔎 */
+/* ////////////////// */
+
+header {
+    position: absolute;
+}
+
+/* ////////////////////// */
+/* 🤠🤠🤠 NAVIGATION 🤠🤠🤠 */
+/* ////////////////////// */
 
 nav ul {
     display: flex;
@@ -143,6 +209,10 @@ nav ul li:nth-of-type(2) {
     box-shadow: var(--shadow-elevation-medium);
 }
 
+/* ///////////////// */
+/* 🌶️🌶️🌶️ TITLE 🌶️🌶️🌶️ */
+/* ///////////////// */
+
 .titleContainer {
     /* 'New' way of positioning with grid(from Sanne) */
     display: grid;
@@ -173,59 +243,11 @@ nav ul li:nth-of-type(2) {
     z-index: 1;
 }
 
-a {
-    color: var(--black);
-    text-decoration: none;
-}
-
-/* 🪐 TEXT FORMATTING RESPONSIVE 🪐 */
-
-/* SOURCE: https://www.browserstack.com/guide/responsive-design-breakpoints */
-/* SOURCE: https://www.emailonacid.com/blog/article/email-development/emailology_media_queries_demystified_min-width_and_max-width/ */
-
-/* (extra)small mobile 320px - 600px */
-@media screen and (max-width: 600px) {
-
-    h1 {
-        font-size: var(--h1-small);
-    }
-
-    h2 {
-        font-size: var(--h2-small);
-    }
-
-    p {
-        font-size: var(--p-small);
-    }
-
-    .outline {
-        font-size: var(--h2-small);
-        -webkit-text-stroke: var(--outline-small) var(--creme);
-    
-        /* position: relative; */
-        z-index: 1;
-    }
-
-}
-
 @media screen and (max-width: 769px) {
 
-    h1 {
-        font-size: var(--h1-small);
-    }
-
-    h2 {
-        font-size: var(--h2-small);
-    }
-
-    p {
-        font-size: var(--p-small);
-    }
-
     .outline {
         font-size: var(--h2-small);
         -webkit-text-stroke: var(--outline-small) var(--creme);
-        z-index: 1;
     }
 
 }
@@ -478,6 +500,15 @@ img.miniBag {
 img.bagCharm {
     width: 4vw;
     position: absolute;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    height: fit-content;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
 }
 
 
