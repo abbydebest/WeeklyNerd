@@ -60,10 +60,22 @@ fetch(myURL)
         console.log(myImg);
 
         // Change the source/content of the img/.avatar class to data/img of myAvatar
-        myImg.src = myAvatar;
+        // myImg.src = myAvatar;
 
         // Check if this works
-        console.log(myAvatar);
+        // console.log(myAvatar);
+
+        // ❤️‍🔥❤️‍🔥❤️‍🔥 To change p text to bio text from API ❤️‍🔥❤️‍🔥❤️‍🔥
+        let bio = document.querySelector(".bio");
+        let bioText = abbsData.data.bio;
+        
+        bio.textContent = bioText;
+
+        // ❤️‍🔥❤️‍🔥❤️‍🔥 To change p text to bio text from API ❤️‍🔥❤️‍🔥❤️‍🔥
+        let gitHandle = document.querySelector(".githubLink");
+        let gitLink = abbsData.data.website;
+
+        gitHandle.setAttribute("href", gitLink);
 
     })
     .catch(error => console.error('Fout bij ophalen', error));
@@ -78,12 +90,8 @@ fetch(myURL)
             if (this.angle < 250 && 100 < this.angle) {
                 console.log("storten maar die spulletjes");
                 stuff.classList.remove("hidden");
-                // stuffMiniBag.classList.remove("hidden");
                 shadow.classList.remove("hidden");
-            } else {
-                // stuff.classList.add("hidden");
-                // stuffMiniBag.classList.add("hidden");
-                // shadow.classList.add("hidden");
+
             }
         },
         onDragStart: function () {
@@ -101,11 +109,8 @@ fetch(myURL)
                 
             minibag.style.setProperty("--angle", this.angle);
             charm.style.setProperty("--angle", this.angle);
-            // stuffMiniBag.style.setProperty("--angle", this.angle);
         }
 });
-
-
 
     // function showLibraryInfo() {
     //     if (window.libInfoShown !== true) {

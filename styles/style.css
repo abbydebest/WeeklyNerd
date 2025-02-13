@@ -8,8 +8,8 @@
 }
 
 @font-face {
-    font-family: "PP Agrandir Regular";
-    src: url(../fonts/PPAgrandir/PPAgrandir-Regular.otf);
+    font-family: "ES Replan";
+    src: url(../fonts/ESReplanVariform-Regular1TRIAL.otf);
 }
 
 @font-face {
@@ -40,7 +40,7 @@
     /* Fonts */
     --clay: "Clay", Arial, Helvetica, sans-serif;
     --pixel: "Phosphene", Arial, Helvetica, sans-serif;
-    --regular: "PP Agrandir Regular", Arial, Helvetica, sans-serif;
+    --regular: "ES Replan", Arial, Helvetica, sans-serif;
 
     /* Font sizes mobile/small */
     --h1-small: 5rem;
@@ -48,12 +48,16 @@
     --h3-small: 1rem;
     --p-small: 0.8rem;
 
+    --letter-spacing: 0.04rem;
+
     /* Font sizes normal/desktop*/
     --h1: 8rem;
     --h2: 4rem;
     --h3: 1.5rem;
     --p: 1rem;
 
+    --width-extra-extra-small: 35%;
+    --width-extra-small: 80%;
     --width-small: 25%;
     --width-medium: 30%;
     --width-large: 75%;
@@ -81,6 +85,7 @@
 
 body {
     font-family: var(--regular);
+    letter-spacing: var(--letter-spacing);
     color: var(--black);
     background-color: var(--white);
 
@@ -104,6 +109,7 @@ h2 {
 }
 
 p {
+    font-family: var(--regular);
     font-size: var(--p);
     text-align: center;
 }
@@ -177,6 +183,7 @@ nav ul {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+    width: 100vw;
     padding: 0.8rem 1rem;
 }
 
@@ -252,9 +259,9 @@ nav ul li:nth-of-type(2) {
 
 }
 
-/* ////////////////////// */
-/* 💥💥💥 ANIMATIONS 💥💥💥 */
-/* ////////////////////// */
+/* /////////////////////////// */
+/* 💥💥💥 ANIMATION SHAKE 💥💥💥 */
+/* /////////////////////////// */
 
 /* SOURCE: https://unused-css.com/blog/css-shake-animation/ */
 @keyframes tilt-n-move-shaking {
@@ -277,6 +284,10 @@ section:nth-of-type(1) {
     justify-content: space-evenly;
     align-items: center;
     padding: 2em 2em 2em 2em;
+}
+
+.bio {
+    width: 65vw;
 }
 
 .shake {
@@ -312,41 +323,17 @@ section:nth-of-type(1) {
 .stuff li {
     grid-area:1/1;
 
-    display:grid;
-    width:fit-content;
+    display: grid;
+    width: fit-content;
     justify-items: center;
     align-items: start;
     rotate: 180deg;
     width:30%;
 }
 
-/* Animation on li instead of on img to better position with shadow */
-.stuff:has(:not(.hidden)) li {
-    animation: drop 1.5s forwards;
-}
-
-.stuff li * {
-    grid-area:1/1;
-}
-
-.stuff:has(:not(.hidden)) li img {
-    position: relative;
-    width:100%;
-}
-
-.stuffMiniBag {
-    width: 18.068vw;
-    height: 3.574vh;
-    position: absolute;
-    top: 47.5%;
-    left: -25%;
-    rotate: -50deg;
-    z-index: 1;
-}
-
-.hidden {
-    display: none;
-}
+/* ///////////////////////////////////// */
+/* 🤎🤎🤎 ANIMATION FALL OUT OF BAG 🤎🤎🤎 */
+/* ///////////////////////////////////// */
 
 /* Tweede animatie met minder vh voor responsive */
 @keyframes drop {
@@ -355,22 +342,26 @@ section:nth-of-type(1) {
         animation-timing-function: ease-in; 
     }
     50% {
-        transform: translateY(-41vh);
+        transform: translateY(-31vh);
         animation-timing-function: ease-in; 
     }
     70% {
-        transform: translateY(-43vh);
+        transform: translateY(-33vh);
         animation-timing-function: ease-in; 
     }
     90% {
-        transform: translateY(-44vh);
+        transform: translateY(-34vh);
         animation-timing-function: ease-in; 
     }
     40%, 60%, 80%, 100% {
-        transform: translateY(-45vh);
+        transform: translateY(-35vh);
         animation-timing-function: ease-out; 
     }
   }
+
+/* //////////////////////////// */
+/* ✨✨✨ ANIMATION SHADOW ✨✨✨ */
+/* //////////////////////////// */
 
 @keyframes shadowScale {
     0% {
@@ -395,11 +386,41 @@ section:nth-of-type(1) {
     }
 }
 
-.shadow {
-    /* position: absolute; */
-    /* height: 2.5%; */
-    /* width: calc(var(--width-small, --width-medium, --width-large) + 15%); */
+/* Animation on li instead of on img to better position with shadow */
+.stuff:has(:not(.hidden)) li {
+    animation: drop 1.5s forwards 0.5s;
+}
 
+.stuff:has(:not(.hidden)) li.discoball {
+    animation-delay: 2s;
+}
+
+.stuff:has(:not(.hidden)) li.airpod1 {
+    animation-delay: 3.5s;
+}
+
+.stuff:has(:not(.hidden)) li.airpod2 {
+    animation-delay: 4s;
+}
+
+.stuff:has(:not(.hidden)) li.case {
+    animation-delay: 5.5s;
+}
+
+.stuff li * {
+    grid-area:1/1;
+}
+
+.stuff:has(li) {
+    pointer-events: auto;
+}
+
+.stuff:has(:not(.hidden)) li img {
+    position: relative;
+    width:100%;
+}
+
+.shadow {
     position: relative;
     width: 105%;
     height: 50%;
@@ -408,28 +429,23 @@ section:nth-of-type(1) {
     filter: blur(0.2rem);
 
     border-radius: 50%;
-    /* bottom: 0; */
-    /* top: 0; */
-    /* transform: translateX(-50%) scale(0.3); */
     animation: shadowScale 1.5s forwards;
-
-    /* transform: translateY(-50%); */
 }
 
 /* Stuff sizes & rotation */
 /* Make stuff in minibag rotate */
-.extraExtraSmall {
+/* .extraExtraSmall {
     width: 1.2vw;
     position: absolute;
     right: 30%;
     top: 45%;
-}
+} */
 
-.extraExtraSmall img {
+/* .extraExtraSmall img {
     width: 100%;
     transform-origin: 300% 47%;
     rotate: calc(var(--angle) * -1deg);
-}
+} */
 
 .extraSmall {
     width: 3.5vw;
@@ -439,10 +455,18 @@ section:nth-of-type(1) {
     top: 38%;
 }
 
-.extraSmall img {
+img.extraSmall {
     width: 100%;
     transform-origin: 170% 47%;
     rotate: calc(var(--angle) * -1deg);
+}
+
+.stuff:has(:not(.hidden)) li img.extraExtraSmall {
+    width: var(--width-extra-extra-small);
+}
+
+.stuff:has(:not(.hidden)) li img.extraSmall {
+    width: var(--width-extra-small);
 }
 
 .small {
@@ -502,13 +526,43 @@ img.bagCharm {
     position: absolute;
 }
 
+/* /////////////////////////// */
+/* 👩🏼‍💻👩🏼‍💻👩🏼‍💻 ABOUT ITEM TEXT 👩🏼‍💻👩🏼‍💻👩🏼‍💻 */
+/* /////////////////////////// */
+
+.aboutMeContainer {
+    width: 55vw;
+}
+
+/* SOURCE: https://chatgpt.com/share/67ad2e02-5888-8002-8e6c-02949c327706 */
+.aboutSunglasses,
+.aboutDiscoBall {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.stuff li:hover ~ article .aboutSunglasses,
+.stuff:hover ~ article .aboutSunglasses {
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+}
+
 footer {
     position: fixed;
     bottom: 0;
+    padding: 0.5rem;
     height: fit-content;
     width: 100vw;
     display: flex;
     justify-content: center;
+}
+
+footer p {
+    color: rgba(177, 158, 143, 0.486);
+    font-size: 0.8rem;
 }
 
 
