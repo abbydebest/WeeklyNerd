@@ -221,6 +221,28 @@ nav ul li:nth-of-type(2) {
     box-shadow: var(--shadow-elevation-medium);
 }
 
+/* Nav responsive */
+/* (extra)small mobile 320px - 600px */
+@media screen and (max-width: 769px) {
+
+    h1 {
+        font-size: var(--h1-small);
+    }
+
+    h2 {
+        font-size: var(--h2-small);
+    }
+
+    p {
+        font-size: var(--p-small);
+    }
+
+    .titleContainer {
+        transform: translateY(-45%);
+    }
+
+}
+
 /* ///////////////// */
 /* 🌶️🌶️🌶️ TITLE 🌶️🌶️🌶️ */
 /* ///////////////// */
@@ -334,6 +356,16 @@ section:nth-of-type(1) {
     align-items: start;
     rotate: 180deg;
     width:30%;
+}
+
+.discoball {
+    margin-right: 35%;
+}
+
+.case,
+.airpod1,
+.airpod2 {
+    margin-left: 35%;
 }
 
 /* ///////////////////////////////////// */
