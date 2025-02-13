@@ -71,7 +71,8 @@ fetch(myURL)
         
         bio.textContent = bioText;
 
-        // ❤️‍🔥❤️‍🔥❤️‍🔥 To change p text to bio text from API ❤️‍🔥❤️‍🔥❤️‍🔥
+        // 🥡🥡🥡 To change href a with class .githunLink to link from API 🥡🥡🥡
+        // SOURCE TO SELECT HREF: https://chatgpt.com/share/67ada448-9f48-8002-b4b2-cd99e857b2f9
         let gitHandle = document.querySelector(".githubLink");
         let gitLink = abbsData.data.website;
 
