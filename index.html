@@ -39,8 +39,8 @@
     <!-- ///////////////////////////// -->
     <!-- 🛒🛒🛒 WHAT'S IN MY BAG? 🛒🛒🛒 -->
     <!-- ///////////////////////////// -->
-
-        <section>
+        <form action="">
+        <section class="lay-out">
             <!-- ///////////////// -->
             <!-- 🌶️🌶️🌶️ TITLE 🌶️🌶️🌶️ -->
             <!-- ///////////////// -->
@@ -49,10 +49,15 @@
                     <h1>Explore</h1>
                 </li>
                 <li class="titleContainer">
-                    <h2>What's in my bag?</h2>
-                    <p class="outline">What's in my bag?</p>
+                    <h2>What's in my bag</h2>
+                    <p class="outline">What's in my bag</p>
                 </li>
             </ul>
+
+            <!-- /////////////// -->
+            <!-- 🤎🤎🤎 BAG 🤎🤎🤎 -->
+            <!-- /////////////// -->
+
             <p class="bio">Bio text</p>
             <div class="shake">
                 <article class="bagContainer">
@@ -70,10 +75,10 @@
             </div>
             <ul class="stuff hidden">
                 <!-- SOURCE: https://www.jimmyfairly.com/en-eu/products/p589-bckes-gabrie -->
-                <li class="sunglasses">
+                <!-- <li class="sunglasses">
                     <img class="medium" src="images/Gabie from Jimmy Fairly Background Removed.png" alt="Abby's retro aviator glasses">
                     <div class="shadow"></div>
-                </li>
+                </li> -->
                 <!-- <li>
                     <img class="medium" src="images/Ganni x Ace and Tate Background Removed.png" alt="Abby's summer sunglasses">
                     <div class="shadow"></div>
@@ -95,30 +100,66 @@
                     <div class="shadow"></div>
                 </li> -->
                 <!-- SOURCE: https://jp.pinterest.com/pin/396668679702630377/ -->
-                <li class="discoball">
+                <!-- <li class="discoball">
                     <img class="medium" src="images/round pfp 🪩 Background Removed.png" alt="Abby's discoball">
                     <div class="shadow"></div>
-                </li>
+                </li> -->
                 <!-- SOURCE: https://ilostmyairpods.com/products/losse-apple-oplaad-case-2-pro-airpods-pro-2-tweede-generatie-kwijt-hoesje-a2698 -->
-                <li class="case">
+                <!-- <li class="case">
                     <img class="extraSmall" src="images/losseairpodlaadcasebestellen.png" alt="Abby's airpods case">
                     <div class="shadow"></div>
-                </li>
+                </li> -->
                 <!-- SOURCE: https://www.citypng.com/photo/26568/apple-airpods-pro-2nd-generation-free-png -->
-                <li class="airpod1">
+                <!-- <li class="airpod1">
                     <img class="extraExtraSmall" src="images/Apple AirPods Pro 2nd Gen PNG copy.png" alt="Abby's left airpod">
                     <div class="shadow"></div>
                 </li>
                 <li class="airpod2">
                     <img class="extraExtraSmall" src="images/Apple AirPods Pro 2nd Gen PNG.png" alt="Abby's right airpod">
                     <div class="shadow"></div>
+                </li> -->
+                <li class="macbook-wrapper">
+                    <input popovertarget="whats-on-my-macbook" popovertargetaction="toggle" type="button" id="macbook" name="bag-items" value="">
+                    <label for="macbook">Abby's MacBook Pro with weekly nerds</label>
+                    <div class="shadow"></div>
+                </li>
+                <li class="notebook-api">
+                    <a href="https://github.com/abbydebest/API-journal">
+                        <img class="large" src="images/Leuchtturm1917-A5-Notebook-SpiceBrown-OW_1500x_95559c58-51e1-4070-b3d4-3a0dacb9e935_1600x Background Removed.png" alt="Abby's API pinterest journal">
+                    </a>
+                    <div class="shadow"></div>
+                </li>
+                <li class="nesso-lamp-css">
+                    <a href="https://github.com/abbydebest/CssControlBoard">
+                        <input type="button" id="lamp" name="bag-items" value="">
+                    </a>
+                    <label for="lamp">Nesso lamp CSS experiment</label>
+                    <div class="shadow"></div>
                 </li>
             </ul>
-            <article class="aboutMeContainer">
+            <!-- <article class="aboutMeContainer">
                 <p class="aboutSunglasses">Sunglasses, because I love the different frames and models and have way to many</p>
-                <!-- <p class="aboutDiscoBall">Disco ball</p> -->
-            </article>
+                <p class="aboutDiscoBall">Disco ball</p>
+                <p class="about-journal-api">See my Pinterest API journal website, with which you can create journal spreads directly with your pins!</p>
+                <p class="about-nesso-lamp-css">See my experimental nesso lamp that you can control with pure CSS!</p>
+            </article> -->
+            <section id="whats-on-my-macbook" popover>
+                <h3>What else is in my bag?</h3>
+                
+            </section>
+            
+                
+                
+            
         </section>
+        </form>
+        <!-- ////////////// -->
+        <!-- FILES -->
+        <!-- ////////////// -->
+        <!-- <article class="weeklyNerd1">
+            <a href="/weeklyNerd1.html"><img src="/images/folder-icon-macos.webp" alt="file image"></a>
+            <a href="/weeklyNerd1.html"></a>
+        </article> -->
     </main>
     <footer>
         <p>Made by Abby de Best 2025</p>

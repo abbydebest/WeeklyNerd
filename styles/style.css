@@ -20,7 +20,6 @@
 }
 /* SOURCE: https://uncut.wtf/display/phosphene/ */
 
-
 /* ////////////////////// */
 /* 🍙🍙🍙 CSS REMEDY 🍙🍙🍙 */
 /* ////////////////////// */
@@ -40,6 +39,9 @@
     --black: #1f1f1f;
     --white: #ffffff;
     --creme: seashell;
+
+    --dark-creme-border: rgb(203, 184, 171);
+    --dark-creme-opacity: rgba(203, 184, 171, 0.339);
 
     /* Fonts */
     --clay: "Clay", Arial, Helvetica, sans-serif;
@@ -65,13 +67,14 @@
     --width-small: 25%;
     --width-medium: 30%;
     --width-large: 75%;
+    --width-extra-large: 160%;
 
     /* Title outline */
     --outline: 0.8rem;
     --outline-small: 0.5rem;
 
     /* Bag width */
-    --bag-width: 20vw;
+    --bag-width: 18vw;
 
     /* Shadow */
     /* SOURCE: https://getcssscan.com/css-box-shadow-examples */
@@ -148,27 +151,6 @@ a {
     }
 
 }
-
-/* @media screen and (max-width: 769px) {
-
-    h1 {
-        font-size: var(--h1-small);
-    }
-
-    h2 {
-        font-size: var(--h2-small);
-    }
-
-    p {
-        font-size: var(--p-small);
-    }
-
-    .outline {
-        font-size: var(--h2-small);
-        -webkit-text-stroke: var(--outline-small) var(--creme);
-    }
-
-} */
 
 /* ////////////////// */
 /* 🔎🔎🔎 HEADER 🔎🔎🔎 */
@@ -303,18 +285,20 @@ nav ul li:nth-of-type(2) {
 /* 🛒🛒🛒 WHAT'S IN MY BAG 🛒🛒🛒 */
 /* //////////////////////////// */
 
-section:nth-of-type(1) {
+section.lay-out{
     display: flex;
     flex-flow: column nowrap;
     width: 100vw;
     height: 100vh;
-    justify-content: space-evenly;
+    position: relative;
+    /* justify-content: space-evenly; */
     align-items: center;
+    gap: 1rem;
     padding: 2em 2em 2em 2em;
 }
 
 .bio {
-    width: 65vw;
+    width: 40vw;
 }
 
 .shake {
@@ -340,7 +324,7 @@ section:nth-of-type(1) {
     height: fit-content;
     position: absolute;
     z-index: 1;
-
+    top: 35%;
     display:grid;
     justify-items: center;
     align-items: end;
@@ -355,7 +339,7 @@ section:nth-of-type(1) {
     justify-items: center;
     align-items: start;
     rotate: 180deg;
-    width:30%;
+    /* width:30%; */
 }
 
 .discoball {
@@ -367,6 +351,15 @@ section:nth-of-type(1) {
 .airpod2 {
     margin-left: 35%;
 }
+
+.notebook-api {
+    margin-left: 50%;
+
+    & img {
+        rotate: -45deg;
+    }
+}
+
 
 /* ///////////////////////////////////// */
 /* 🤎🤎🤎 ANIMATION FALL OUT OF BAG 🤎🤎🤎 */
@@ -431,11 +424,11 @@ section:nth-of-type(1) {
     animation: drop 1.5s forwards 0.5s;
 }
 
-.stuff:has(:not(.hidden)) li.discoball {
+.stuff:has(:not(.hidden)) li.notebook-api {
     animation-delay: 2s;
 }
 
-.stuff:has(:not(.hidden)) li.airpod1 {
+.stuff:has(:not(.hidden)) li.discoball {
     animation-delay: 3.5s;
 }
 
@@ -457,13 +450,15 @@ section:nth-of-type(1) {
 
 .stuff:has(:not(.hidden)) li img {
     position: relative;
-    width:100%;
+    /* width:100%; */
 }
 
 .shadow {
-    position: relative;
-    width: 105%;
-    height: 50%;
+    position: absolute;
+    z-index: -1;
+    width: 110%;
+    height: 10%;
+    top: .8rem;
 
     background-color: rgba(56, 56, 56, 0.3);
     filter: blur(0.2rem);
@@ -521,6 +516,10 @@ img.extraSmall {
     width: var(--width-large);
 }
 
+.extra-large {
+    width: var(--width-extra-large);
+}
+
 /* Charms nog laten bewegen */
 .charm1 {
     position: absolute;
@@ -566,26 +565,6 @@ img.bagCharm {
     position: absolute;
 }
 
-/* /////////////////////////// */
-/* 👩🏼‍💻👩🏼‍💻👩🏼‍💻 ABOUT ITEM TEXT 👩🏼‍💻👩🏼‍💻👩🏼‍💻 */
-/* /////////////////////////// */
-
-.aboutMeContainer {
-    width: 55vw;
-}
-
-/* SOURCE: https://chatgpt.com/share/67ad2e02-5888-8002-8e6c-02949c327706 */
-.aboutSunglasses,
-.aboutDiscoBall {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.stuff li:hover ~ article .aboutSunglasses,
-.stuff:hover ~ article .aboutSunglasses {
-    opacity: 1;
-}
-
 .hidden {
     display: none;
 }
@@ -606,3 +585,108 @@ footer p {
 }
 
 
+article.weeklyNerd1 {
+    width: 10rem;
+    height: auto;
+
+    & > input {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+/* ///////////////////// */
+/* 🍘🍘🍘 BAG ITEMS 🍘🍘🍘 */
+/* ///////////////////// */
+
+form {
+    width: auto;
+    height: auto;
+}
+
+input[type="button"] {
+    border-radius: .3rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    box-sizing: border-box;
+
+    &:hover {
+        border: 0.1rem solid var(--dark-creme-border);
+        background-color: var(--dark-creme-opacity);
+    }
+
+}
+
+label {
+    width: 55vw;
+    opacity: 0;
+    position: absolute;
+    transform: rotate(180deg);
+    top: -3.5rem;
+    text-align: center;
+}
+
+.macbook-wrapper,
+.nesso-lamp-css {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: auto;
+    height: auto;
+
+    &:hover {
+        z-index: 100;
+        position: relative;
+    }
+}
+
+#macbook {
+    --mac-book-width: 13.5rem;
+    --mac-book-height: calc(var(--mac-book-width) * 0.7);
+
+    background-image: url('../images/MacBook Pro = Silver.png');
+    background-size: var(--mac-book-width) var(--mac-book-height);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: calc(var(--mac-book-width) + .8rem);
+    height: calc(var(--mac-book-height) + 1.5rem);
+}
+
+#lamp {
+    --lamp-width: 10rem;
+    --lamp-height: calc(var(--lamp-width) * 0.75);
+
+    background-image: url('../images/2d4c5de3-b124-4268-8572-db443913caf7.png');
+    background-size: var(--lamp-width) var(--lamp-height);
+    background-repeat: no-repeat;
+    background-position: center center;
+    transform: rotate(20deg);
+    width: calc(var(--lamp-width) + .8rem);
+    height: calc(var(--lamp-height) + 1.5rem);
+    margin-left: 4rem;
+}
+
+.macbook-wrapper:hover label[for="macbook"],
+.nesso-lamp-css:hover label[for="lamp"] {
+    opacity: 100%;
+}
+
+
+
+/* //////////////////////////////// */
+/* 💻💻💻 MACBOOK WEEKLY NERDS 💻💻💻 */
+/* //////////////////////////////// */
+
+#whats-on-my-macbook {
+    width: 80vw;
+    height: 80vh;
+    background-color: var(--creme);
+    border: #1f1f1f solid 0.1rem;
+}
+
+#whats-on-my-macbook:popover-open {
+    display: grid;
+    justify-self: center;
+    align-self: center;
+}
