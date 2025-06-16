@@ -76,21 +76,21 @@
             <ul class="stuff hidden">
                 <li class="macbook-wrapper">
                     <input popovertarget="whats-on-my-macbook" popovertargetaction="toggle" type="button" id="macbook" name="bag-items" value="">
-                    <label for="macbook">Abby's MacBook Pro with weekly nerds</label>
+                    <label class="item-text" for="macbook">Abby's MacBook Pro with weekly nerds</label>
                     <div class="shadow"></div>
                 </li>
                 <li class="nesso-lamp-css">
                     <a href="https://github.com/abbydebest/CssControlBoard" target="_blank">
                         <input type="button" id="lamp" name="bag-items" value="">
                     </a>
-                    <label for="lamp">Nesso lamp CSS experiment</label>
+                    <label class="item-text" for="lamp">Nesso lamp CSS experiment</label>
                     <div class="shadow shadow-lamp"></div>
                 </li>
                 <li class="notebook-api">
                     <a href="https://github.com/abbydebest/API-journal" target="_blank">
                         <input type="button" id="notebook" name="bag-items" value="">
                     </a>
-                    <label for="notebook">My API journal experiment</label>
+                    <label class="item-text" for="notebook">My API journal experiment</label>
                     <div class="shadow shadow-notebook"></div>
                 </li>
                 <!-- SOURCE: https://jp.pinterest.com/pin/396668679702630377/ -->
@@ -98,7 +98,7 @@
                     <a href="https://github.com/RedDragg/TheFramers-2025" target="_blank">
                         <input type="button" id="discoball" name="bag-items" value="">
                     </a>
-                    <label for="discoball">The master thesis for FRAMER FRAMED Amsterdam</label>
+                    <label class="item-text" for="discoball">The master thesis for FRAMER FRAMED Amsterdam</label>
                     <div class="shadow shadow-discoball"></div>
                 </li>
                 <!-- SOURCE: https://www.jimmyfairly.com/en-eu/products/p589-bckes-gabrie -->
@@ -106,7 +106,7 @@
                     <a href="https://github.com/abbydebest/BrowserTechnologies" target="_blank">
                         <input type="button" id="sunglasses" name="bag-items" value="">
                     </a>
-                    <label for="sunglasses">My remake of the inheritance tax form in HTML for browser tech</label>
+                    <label class="item-text" for="sunglasses">My remake of the inheritance tax form in HTML for browser tech</label>
                     <div class="shadow shadow-sunglasses"></div>
                 </li>
                 <!-- SOURCE: https://ilostmyairpods.com/products/losse-apple-oplaad-case-2-pro-airpods-pro-2-tweede-generatie-kwijt-hoesje-a2698 -->
@@ -114,7 +114,7 @@
                     <a href="https://github.com/abbydebest?tab=repositories" target="_blank">
                         <input type="button" id="airpod-case" name="bag-items" value="">
                     </a>
-                    <label for="airpod-case">My take on a podcast tailored to deaf people for human interaction design</label>
+                    <label class="item-text" for="airpod-case">My take on a podcast tailored to deaf people for human interaction design</label>
                     <div class="shadow shadow-airpods"></div>
                 </li>
                 <!-- SOURCE: https://www.citypng.com/photo/26568/apple-airpods-pro-2nd-generation-free-png -->
@@ -129,11 +129,142 @@
             </ul>
             <section id="whats-on-my-macbook" popover>
                 <h3>Minor nerds & reflections</h3>
-                <ul>
-                    <li>
-                        <input popovertarget="content-nerd1-kilian" popovertargetaction="toggle" type="button" id="weekly-nerd1-file" name="weekly-nerds" value="Weekly nerd 1">
-                        <label for="weekly-nerd1-file">Stop using JS for that - Kilian Valkhof</label>
+                <ul class="weekly-nerds-files">
+                    <li class="file">
+                        <input popovertarget="content-nerd1-kilian" popovertargetaction="toggle" type="button" id="weekly-nerd1-file" name="weekly-nerds">
+                        <label class="file-name" for="weekly-nerd1-file">Stop using JS for that - Kilian Valkhof</label>
                         <section id="content-nerd1-kilian" popover>
+                            <h3>Stop using JS for that - Kilian Valkhof</h3>
+                            <ul>
+                                <li>
+                                    🔗 Electron governance, application to build desktop apps with html, css and js
+                                </li>
+                                <li>
+                                    🔗 Polypane browser, browser created for developers with accessibility functions and</p>
+                                </li>
+                            </ul>
+                            <p>🪐 Moving features from JS to CSS & HTML</p>
+                            <p>The rule of least power = altijd de minst krachtige taal kiezen zodat browser alle slimme keuzes kan maken(voor betere experience, meer error controle)</p>
+                            <p>🤎 Custom switches</p>
+                            <p>Door Input in label weet browser dat label/text erbij hoort en maakt deze ook klikbaar</p>
+                        </section>
+                    </li>
+                    <li class="file">
+                        <input popovertarget="content-nerd2-roel" popovertargetaction="toggle" type="button" id="weekly-nerd2-file" name="weekly-nerds">
+                        <label class="file-name" for="weekly-nerd2-file">Typography - Roel Nieskens</label>
+                        <section id="content-nerd2-roel" popover>
+                            <h3>Typography - Roel Nieskens</h3>
+                        </section>
+                    </li>
+                    <li class="file">
+                        <input popovertarget="content-nerd3-cassie" popovertargetaction="toggle" type="button" id="weekly-nerd3-file" name="weekly-nerds">
+                        <label class="file-name" for="weekly-nerd3-file">Beyond tweening - Cassie Evens</label>
+                        <section id="content-nerd3-cassie" popover>
+                            <h3>Beyond tweening - Cassie Evens</h3>
+                        </section>
+                    </li>
+                    <li class="file">
+                        <input popovertarget="content-nerd4-nils" popovertargetaction="toggle" type="button" id="weekly-nerd4-file" name="weekly-nerds">
+                        <label class="file-name" for="weekly-nerd4-file">Design for flexibility - Nils Binder</label>
+                        <section id="content-nerd4-nils" popover>
+
+                        </section>
+                    </li>
+                    <li class="file">
+                        <input popovertarget="content-nerd5-jkeith" popovertargetaction="toggle" type="button" id="weekly-nerd5-file" name="weekly-nerds">
+                        <label class="file-name" for="weekly-nerd5-file">Imperative vs. declarative design - Jeremy Keith</label>
+                        <section id="content-nerd5-jkeith" popover>
+
+                        </section>
+                    </li>
+                    <li class="file">
+                        <input popovertarget="content-nerd6-julia" popovertargetaction="toggle" type="button" id="weekly-nerd6-file" name="weekly-nerds">
+                        <label class="file-name" for="weekly-nerd6-file">CSS character animations - Julia Miocene</label>
+                        <section id="content-nerd6-julia" popover>
+
+                        </section>
+                    </li>
+                    <li class="file">
+                        <input popovertarget="content-nerd7-rosa" popovertargetaction="toggle" type="button" id="weekly-nerd7-file" name="weekly-nerds">
+                        <label class="file-name" for="weekly-nerd7-file">Circuit bending - Rosa</label>
+                        <section id="content-nerd7-rosa" popover>
+
+                        </section>
+                    </li>
+                    <li class="file">
+                        <input popovertarget="content-nerd8-niels" popovertargetaction="toggle" type="button" id="weekly-nerd8-file" name="weekly-nerds">
+                        <label class="file-name" for="weekly-nerd8-file">Project Fugu - Niels Leenheer</label>
+                        <section id="content-nerd8-niels" popover>
+
+                        </section>
+                    </li>
+                    <li class="file">
+                        <input popovertarget="content-nerd9-nienke" popovertargetaction="toggle" type="button" id="weekly-nerd9-file" name="weekly-nerds">
+                        <label class="file-name" for="weekly-nerd6-file">Accessability meetup - Nienke de Keijzer</label>
+                        <section id="content-nerd9-nienke" popover>
+
+                        </section>
+                    </li>
+                    <li class="file">
+                        <input popovertarget="content-nerd10-io" popovertargetaction="toggle" type="button" id="weekly-nerd10-file" name="weekly-nerds">
+                        <label class="file-name" for="weekly-nerd10-file"> - iO</label>
+                        <section id="content-nerd10-io" popover>
+
+                        </section>
+                    </li>
+                    <li class="file">
+                        <input popovertarget="content-nerd11-q42" popovertargetaction="toggle" type="button" id="weekly-nerd11-file" name="weekly-nerds">
+                        <label class="file-name" for="weekly-nerd11-file">A11Y - Q42</label>
+                        <section id="content-nerd11-q42" popover>
+
+                        </section>
+                    </li>
+                    <li class="file">
+                        <input popovertarget="content-nerd12-mar" popovertargetaction="toggle" type="button" id="weekly-nerd12-file" name="weekly-nerds">
+                        <label class="file-name" for="weekly-nerd12-file">European Accessibility Act - Marieke de Hoop</label>
+                        <section id="content-nerd12-mar" popover>
+
+                        </section>
+                    </li>
+                    <li class="file">
+                        <input popovertarget="content-nerd13-pre" popovertargetaction="toggle" type="button" id="weekly-nerd13-file" name="weekly-nerds">
+                        <label class="file-name" for="weekly-nerd12-file">Pre CSS day</label>
+                        <section id="content-nerd13-pre" popover>
+
+                        </section>
+                    </li>
+                    <li class="file">
+                        <input popovertarget="content-nerd14-CSS" popovertargetaction="toggle" type="button" id="weekly-nerd14-file" name="weekly-nerds">
+                        <label class="file-name" for="weekly-nerd14-file">CSS day</label>
+                        <section id="content-nerd14-CSS" popover>
+
+                        </section>
+                    </li>
+                    <li class="file">
+                        <input popovertarget="hackaton" popovertargetaction="toggle" type="button" id="hackaton-file" name="weekly-nerds">
+                        <label class="file-name" for="hackaton-file">Hackaton</label>
+                        <section id="hackaton" popover>
+
+                        </section>
+                    </li>
+                    <li class="file">
+                        <input popovertarget="goals" popovertargetaction="toggle" type="button" id="goals-file" name="weekly-nerds">
+                        <label class="file-name" for="goals-file">Goals</label>
+                        <section id="goals" popover>
+
+                        </section>
+                    </li>
+                    <li class="file">
+                        <input popovertarget="reflection-1" popovertargetaction="toggle" type="button" id="ref-1-file" name="weekly-nerds">
+                        <label class="file-name" for="ref-1-file">Reflection 1</label>
+                        <section id="reflection-1" popover>
+
+                        </section>
+                    </li>
+                    <li class="file">
+                        <input popovertarget="reflection-2" popovertargetaction="toggle" type="button" id="ref-2-file" name="weekly-nerds">
+                        <label class="file-name" for="ref-2-file">Reflection 2</label>
+                        <section id="reflection-2" popover>
 
                         </section>
                     </li>
