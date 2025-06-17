@@ -797,6 +797,10 @@ label.item-text {
     background-image: url('../images/folder-ref2.svg');
 }
 
+.reflection {
+    list-style: inside !important;
+}
+
 /* ////////////////// */
 /* 🫒🫒🫒 FOOTER 🫒🫒🫒 */
 /* ////////////////// */
